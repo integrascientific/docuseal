@@ -1,9 +1,9 @@
 self.addEventListener('install', () => {
-  console.log('DocuSeal App installed')
+  console.log('Integra Sign app installed')
 })
 
 self.addEventListener('activate', () => {
-  console.log('DocuSeal App activated')
+  console.log('Integra Sign app activated')
 })
 
 self.addEventListener('fetch', (event) => {

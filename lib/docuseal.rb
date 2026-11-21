@@ -1,19 +1,27 @@
 # frozen_string_literal: true
 
 module Docuseal
-  PRODUCT_URL = 'https://www.docuseal.com'
+  # Integra Sign branding -- see INTEGRA-BRANDING.md.
+  # UPSTREAM_* is the DocuSeal attribution required by LICENSE_ADDITIONAL_TERMS
+  # (AGPL section 7(b)); SOURCE_* feeds the public /source page (AGPL section 13).
+  UPSTREAM_NAME = 'DocuSeal'
+  UPSTREAM_URL = 'https://www.docuseal.com'
+  UPSTREAM_VERSION = '3.3.8'
+  SOURCE_URL = 'https://github.com/integrascientific/docuseal'
+  SOURCE_REF = ENV.fetch('SOURCE_REF', 'integra-branding')
+  PRODUCT_URL = 'https://www.integrascientific.com'
   PRODUCT_EMAIL_URL = ENV.fetch('PRODUCT_EMAIL_URL', PRODUCT_URL)
-  NEWSLETTER_URL = "#{PRODUCT_URL}/newsletters".freeze
-  PRODUCT_NAME = 'DocuSeal'
+  NEWSLETTER_URL = "#{UPSTREAM_URL}/newsletters".freeze
+  PRODUCT_NAME = 'Integra Sign'
   DEFAULT_APP_URL = ENV.fetch('APP_URL', 'http://localhost:3000')
   GITHUB_URL = 'https://github.com/docusealco/docuseal'
   DISCORD_URL = 'https://discord.gg/qygYCDGck9'
   TWITTER_URL = 'https://twitter.com/docusealco'
   TWITTER_HANDLE = '@docusealco'
-  CHATGPT_URL = "#{PRODUCT_URL}/chat".freeze
+  CHATGPT_URL = "#{UPSTREAM_URL}/chat".freeze
   APP_STORE_URL = 'https://apps.apple.com/us/app/docuseal-e-signature/id6823564236'
   GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.docuseal.app'
-  SUPPORT_EMAIL = 'support@docuseal.com'
+  SUPPORT_EMAIL = 'info@integrascientific.com'
   HOST = ENV.fetch('HOST', 'localhost')
   AATL_CERT_NAME = 'docuseal_aatl'
   CONSOLE_URL = if Rails.env.development?

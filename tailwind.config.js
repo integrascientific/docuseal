@@ -10,14 +10,16 @@ module.exports = {
       {
         docuseal: {
           'color-scheme': 'light',
-          primary: '#e4e0e1',
-          secondary: '#ef9fbc',
-          accent: '#eeaf3a',
-          neutral: '#291334',
-          'base-100': '#faf7f5',
-          'base-200': '#efeae6',
-          'base-300': '#e7e2df',
-          'base-content': '#291334',
+          // Integra Scientific brand tokens (see INTEGRA-BRANDING.md).
+          // The theme key stays "docuseal": it is an internal id used by data-theme.
+          primary: '#D9D3E8', // Lilac
+          secondary: '#D4B26C', // Gold light
+          accent: '#C5A059', // Gold
+          neutral: '#4B3F72', // Plum
+          'base-100': '#F7F4EF', // Paper
+          'base-200': '#EFEBE3', // Paper/Hairline midpoint
+          'base-300': '#E6E1D6', // Hairline
+          'base-content': '#131B2C', // Ink
           '--rounded-btn': '1.9rem',
           '--tab-border': '2px',
           '--tab-radius': '.5rem'
