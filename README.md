@@ -1,3 +1,5 @@
+> **Integra Sign.** This repository is a modified version of [DocuSeal](https://www.docuseal.com) (based on upstream release 3.3.8), changed by Integra Scientific Ltd in November 2026 to present the application as Integra Sign. It remains licensed under the AGPLv3 with DocuSeal's additional terms (`LICENSE`, `LICENSE_ADDITIONAL_TERMS`). What was changed and how it is maintained: [INTEGRA-BRANDING.md](INTEGRA-BRANDING.md). The original upstream README follows unchanged.
+
 <h1 align="center" style="border-bottom: none">
   <div>
     <a href="https://www.docuseal.com">
