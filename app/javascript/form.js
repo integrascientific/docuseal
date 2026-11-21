@@ -50,7 +50,9 @@ safeRegisterElement('submission-form', class extends HTMLElement {
       withConfetti: this.dataset.withConfetti === 'true',
       nativePlatform: this.dataset.nativePlatform,
       withFieldLabels: this.dataset.withFieldLabels !== 'false',
-      withDisclosure: this.dataset.withDisclosure === 'true',
+      // Integra Sign: upstream's disclosure line links to docuseal.com/esign-disclosure, which does not
+      // cover this service. Off until Integra publishes its own disclosure (see INTEGRA-BRANDING.md).
+      withDisclosure: false,
       reuseSignature: this.dataset.reuseSignature !== 'false',
       withTypedSignature: this.dataset.withTypedSignature !== 'false',
       authenticityToken: document.querySelector('meta[name="csrf-token"]')?.content,

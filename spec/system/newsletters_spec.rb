@@ -1,30 +1,19 @@
 # frozen_string_literal: true
 
+# Integra Sign: the upstream DocuSeal newsletter sign-up is disabled; nothing is sent to docuseal.com.
 RSpec.describe 'Newsletter' do
   let(:user) { create(:user, account: create(:account)) }
 
   before do
     sign_in(user)
     stub_request(:post, Docuseal::NEWSLETTER_URL).to_return(status: 200)
+  end
+
+  it 'redirects to the dashboard instead of offering the newsletter' do
     visit newsletter_path
-  end
-
-  it 'shows the newsletter page' do
-    expect(page).to have_content('Developer Newsletters')
-    expect(page).to have_button('Submit')
-    expect(page).to have_content('Skip')
-    expect(page).to have_field('user[email]', with: user.email)
-  end
-
-  it 'submits the newsletter form' do
-    click_button 'Submit'
-
-    expect(a_request(:post, Docuseal::NEWSLETTER_URL)).to have_been_made.once
-  end
-
-  it 'skips the newsletter form' do
-    click_on 'Skip'
 
     expect(page).to have_current_path(root_path, ignore_query: true)
+    expect(page).to have_no_content('Developer Newsletters')
+    expect(a_request(:post, Docuseal::NEWSLETTER_URL)).not_to have_been_made
   end
 end
