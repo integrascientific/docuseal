@@ -404,6 +404,11 @@
     </toggle-visible>
   <% end %>
 </div>
+<% unless turbo_native_app? %>
+  <div class="text-center text-xs text-base-content/70 px-4 py-3">
+    <%= render 'shared/attribution_line' %>
+  </div>
+<% end %>
 <% unless request.headers['HTTP_X_TURBO_REQUEST_ID'] %>
   <%= render 'scripts/autosize_field' %>
 <% end %>

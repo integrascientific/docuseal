@@ -2,11 +2,5 @@
   ---
 </p>
 <p>
-  <% if @current_account&.testing? %>
-    <%= t('sent_using_product_name_in_testing_mode_html', product_url: "#{Docuseal::PRODUCT_EMAIL_URL}/start", product_name: Docuseal.product_name) %>
-  <% elsif Docuseal.multitenant? %>
-    <%= t('sent_using_product_name_free_document_signing_html', product_url: "#{Docuseal::PRODUCT_EMAIL_URL}/start", product_name: Docuseal.product_name) %>
-  <% else %>
-    <%= t('sent_using_product_name_open_source_software_html', product_url: "#{Docuseal::PRODUCT_EMAIL_URL}/open", product_name: Docuseal.product_name) %>
-  <% end %>
+  <%= Docuseal.product_name %><% if @current_account&.testing? %> (<%= t('test_mode') %>)<% end %> &middot; <%= render 'shared/attribution_line', source_href: source_url %>
 </p>

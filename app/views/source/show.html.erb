@@ -1,0 +1,42 @@
+<% content_for(:html_title, "Source code | #{Docuseal.product_name}") %>
+<% source_ref_url = "#{Docuseal::SOURCE_URL}/tree/#{Docuseal::SOURCE_REF}" %>
+<% upstream_tag_url = "#{Docuseal::SOURCE_URL}/tree/#{Docuseal::UPSTREAM_VERSION}" %>
+<div class="max-w-xl mx-auto px-4 mt-12 mb-6">
+  <div class="flex items-center justify-center">
+    <%= render 'start_form/banner' %>
+  </div>
+  <h2 class="text-2xl font-bold mt-10 mb-4">Source code</h2>
+  <div class="space-y-4">
+    <p>
+      <%= Docuseal.product_name %> is a modified version of <%= Docuseal::UPSTREAM_NAME %>, open source document signing software.
+      It is based on <%= Docuseal::UPSTREAM_NAME %> <%= Docuseal::UPSTREAM_VERSION %> and is licensed under the GNU Affero General Public License, version 3, with <%= Docuseal::UPSTREAM_NAME %>'s additional terms.
+    </p>
+    <p>
+      The complete corresponding source code of the version running here, including Integra Scientific's modifications, is available to everyone at no charge:
+    </p>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>
+        Repository:
+        <a href="<%= Docuseal::SOURCE_URL %>" class="underline" rel="noopener"><%= Docuseal::SOURCE_URL %></a>
+      </li>
+      <li>
+        Source of this build:
+        <a href="<%= source_ref_url %>" class="underline" rel="noopener"><%= Docuseal::SOURCE_REF %></a>
+      </li>
+      <li>
+        Upstream release it is based on:
+        <a href="<%= upstream_tag_url %>" class="underline" rel="noopener">tag <%= Docuseal::UPSTREAM_VERSION %></a>
+      </li>
+      <li>
+        Licence:
+        <a href="<%= source_ref_url.sub('/tree/', '/blob/') %>/LICENSE" class="underline" rel="noopener">LICENSE</a>
+        and
+        <a href="<%= source_ref_url.sub('/tree/', '/blob/') %>/LICENSE_ADDITIONAL_TERMS" class="underline" rel="noopener">LICENSE_ADDITIONAL_TERMS</a>
+      </li>
+    </ul>
+    <p>
+      Questions about the source: <a href="mailto:<%= Docuseal::SUPPORT_EMAIL %>" class="underline"><%= Docuseal::SUPPORT_EMAIL %></a>
+    </p>
+  </div>
+</div>
+<%= render 'shared/attribution' %>

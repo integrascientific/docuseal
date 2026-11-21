@@ -96,6 +96,11 @@ RUN mkdir -p /app/public/fonts && ln -s /fonts/DancingScript-Regular.otf /app/pu
     bundle exec bootsnap precompile -j 1 --gemfile app/ lib/ && \
     chown -R docuseal:docuseal /app/tmp/cache
 
+# Integra Sign: git ref of this build, linked from the public /source page (AGPL section 13).
+# Build with: --build-arg SOURCE_REF=<tag or commit pushed to github.com/integrascientific/docuseal>
+ARG SOURCE_REF=integra-branding
+ENV SOURCE_REF=$SOURCE_REF
+
 WORKDIR /data/docuseal
 ENV HOME=/home/docuseal
 ENV WORKDIR=/data/docuseal

@@ -289,7 +289,7 @@ en: &en
   save: Save
   saving: Saving
   changes_have_been_saved: Changes have been saved.
-  unlock_with_docuseal_pro: Unlock with DocuSeal Pro
+  unlock_with_docuseal_pro: Not available
   use_your_own_certificates_to_sign_and_verify_pdf_files: Use your own certificates to sign and verify PDF files.
   upload_certificate: Upload Certificate
   name: Name
@@ -412,6 +412,8 @@ en: &en
   sign_out: Sign out
   page_number: 'Page %{number}'
   powered_by: Powered by
+  signing_engine_based_on: 'Signing engine based on'
+  source_code: 'Source code'
   qr_code: QR Code
   print: Print
   scan: Scan
@@ -845,8 +847,8 @@ en: &en
   pro_user_seats_used: Pro user seats used
   manage: Manage
   manage_plan: Manage plan
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: This submission has multiple signers, which prevents the use of a sharing link as it's unclear which signer is responsible for specific fields. To resolve this, follow this <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">guide</a> to define the default signer details.
-  welcome_to_docuseal: Welcome to DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: This submission has multiple signers, which prevents the use of a sharing link as it's unclear which signer is responsible for specific fields. To resolve this, define the default signer details in the template.
+  welcome_to_docuseal: Welcome to Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Start a quick tour to learn how to create and send your first document
   start_tour: Start Tour
   name_a_z: Name A-Z
@@ -922,13 +924,13 @@ en: &en
   use_otp_code_to_access_the_api_key_html: Use <b>%{code}</b> code to access the API key.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Please reply to this email if you don't recognize this request.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Your user account has been archived. Contact your administrator to restore access to your account.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Your email could not be reached. This may happen if there was a typo in your address or if your mailbox is not available. Please contact support@docuseal.com to log in.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Your email could not be reached. This may happen if there was a typo in your address or if your mailbox is not available. Please contact info@integrascientific.com to log in.
   efficient_search_with_search_index: Efficient search with search index
   reindex: Reindex
   build_search_index: Build Search Index
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: Require two-factor authentication (2FA) with an authenticator app (e.g., Google Authenticator, Authy). All users signing documents must pass the second factor verification using a secure code in addition to their password.
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: "Add a unique Signature ID and timestamp to each signature for audit and traceability purposes along with the timestamp. Part of DocuSeal's 21 CFR Part 11 compliance settings."
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: "Require signers to provide a reason for signing before completing their signature (e.g., approvals, certifications). Part of DocuSeal's 21 CFR Part 11 compliance settings."
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: "Add a unique Signature ID and timestamp to each signature for audit and traceability purposes along with the timestamp. Part of Integra Sign's 21 CFR Part 11 compliance settings."
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: "Require signers to provide a reason for signing before completing their signature (e.g., approvals, certifications). Part of Integra Sign's 21 CFR Part 11 compliance settings."
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Allow signers to create signatures by typing their name instead of drawing or uploading one.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Allow signers to resubmit forms after completion, useful when corrections or multiple submissions are needed.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Allow recipients to decline signing a document. The decline reason notification will be sent to the signature requester.
@@ -1009,7 +1011,7 @@ en: &en
   mcp_token_has_been_removed: MCP token has been removed.
   enable_mcp_server: Enable MCP server
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: All existing MCP connections will be stopped immediately when this setting is disabled.
-  connect_to_docuseal_mcp: Connect to DocuSeal MCP
+  connect_to_docuseal_mcp: Connect to Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Add the following to your MCP client configuration
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Works with Claude Desktop, Cursor, Windsurf, VS Code, and any MCP-compatible client.
   your_email_address_has_been_changed: Your email address has been changed
@@ -1135,7 +1137,7 @@ en: &en
     settings: 'Settings'
     settings_account_description: 'With comprehensive account settings, you can customize the eSigning experience and invite more users.'
     support: 'Support'
-    support_description: 'You can use our self-service AI assistant or email us at support@docuseal.com if you have any questions.'
+    support_description: 'Email us at info@integrascientific.com if you have any questions.'
     settings_template_description: 'Use this button to access your account settings page.'
   doorkeeper:
     scopes:
@@ -1453,7 +1455,7 @@ es: &es
   save: Guardar
   saving: Guardando
   changes_have_been_saved: Los cambios han sido guardados.
-  unlock_with_docuseal_pro: Desbloquear con DocuSeal Pro
+  unlock_with_docuseal_pro: No disponible
   use_your_own_certificates_to_sign_and_verify_pdf_files: Usa tus propios certificados para firmar y verificar archivos PDF.
   upload_certificate: Subir certificado
   name: Nombre
@@ -1583,6 +1585,8 @@ es: &es
   sign_out: Cerrar sesión
   page_number: 'Página %{number}'
   powered_by: Desarrollado por
+  signing_engine_based_on: 'Motor de firma basado en'
+  source_code: 'Código fuente'
   qr_code: Código QR
   print: Imprimir
   scan: Escanear
@@ -2013,8 +2017,8 @@ es: &es
   pro_user_seats_used: Plazas de usuario Pro en uso
   manage: Gestionar
   manage_plan: Gestionar plan
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Este envío tiene múltiples firmantes, lo que impide el uso de un enlace para compartir, ya que no está claro qué firmante es responsable de los campos específicos. Para resolver esto, sigue esta <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">guía</a> para definir los detalles predeterminados del firmante.'
-  welcome_to_docuseal: Bienvenido a DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Este envío tiene múltiples firmantes, lo que impide el uso de un enlace para compartir, ya que no está claro qué firmante es responsable de los campos específicos. Para resolver esto, define los detalles predeterminados del firmante en la plantilla.'
+  welcome_to_docuseal: Bienvenido a Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Inicia una guía rápida para aprender a crear y enviar tu primer documento.
   start_tour: Iniciar guía
   name_a_z: Nombre A-Z
@@ -2090,13 +2094,13 @@ es: &es
   use_otp_code_to_access_the_api_key_html: Usa el código <b>%{code}</b> para acceder a la clave API.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Responde a este correo si no reconoces esta solicitud.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Tu cuenta de usuario ha sido archivada. Contacta a tu administrador para restaurar el acceso a tu cuenta.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: No se pudo acceder a tu correo electrónico. Esto puede ocurrir si hubo un error tipográfico en tu dirección o si tu buzón no está disponible. Por favor, contacta a support@docuseal.com para iniciar sesión.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: No se pudo acceder a tu correo electrónico. Esto puede ocurrir si hubo un error tipográfico en tu dirección o si tu buzón no está disponible. Por favor, contacta a info@integrascientific.com para iniciar sesión.
   efficient_search_with_search_index: Búsqueda eficiente con índice de búsqueda
   reindex: Reindexar
   build_search_index: Construir índice de búsqueda
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: Requerir autenticación de dos factores (2FA) con una aplicación de autenticación (p. ej., Google Authenticator, Authy). Todos los usuarios que firman documentos deben pasar la verificación del segundo factor usando un código seguro además de su contraseña.
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Agregar un ID de firma único y una marca de tiempo a cada firma para fines de auditoría y trazabilidad junto con la marca de tiempo. Parte de la configuración de cumplimiento 21 CFR Parte 11 de DocuSeal.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Requerir que los firmantes proporcionen un motivo para firmar antes de completar su firma (p. ej., aprobaciones, certificaciones). Parte de la configuración de cumplimiento 21 CFR Parte 11 de DocuSeal.
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Agregar un ID de firma único y una marca de tiempo a cada firma para fines de auditoría y trazabilidad junto con la marca de tiempo. Parte de la configuración de cumplimiento 21 CFR Parte 11 de Integra Sign.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Requerir que los firmantes proporcionen un motivo para firmar antes de completar su firma (p. ej., aprobaciones, certificaciones). Parte de la configuración de cumplimiento 21 CFR Parte 11 de Integra Sign.
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Permitir que los firmantes creen firmas escribiendo su nombre en lugar de dibujar o subir una.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Permitir que los firmantes vuelvan a enviar formularios después de completarlos, útil cuando se necesitan correcciones o múltiples envíos.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Permitir que los destinatarios rechacen firmar un documento. La notificación del motivo del rechazo se enviará al solicitante de la firma.
@@ -2177,7 +2181,7 @@ es: &es
   mcp_token_has_been_removed: El token MCP ha sido eliminado.
   enable_mcp_server: Habilitar servidor MCP
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Todas las conexiones MCP existentes se detendrán inmediatamente cuando se desactive esta configuración.
-  connect_to_docuseal_mcp: Conectar a DocuSeal MCP
+  connect_to_docuseal_mcp: Conectar a Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Agregue lo siguiente a la configuración de su cliente MCP
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Funciona con Claude Desktop, Cursor, Windsurf, VS Code y cualquier cliente compatible con MCP.
   your_email_address_has_been_changed: Tu dirección de correo electrónico ha sido cambiada
@@ -2295,7 +2299,7 @@ es: &es
     settings: 'Configuración'
     settings_account_description: 'Con una configuración completa de la cuenta, puedes personalizar la experiencia de firma y añadir más usuarios.'
     support: 'Soporte'
-    support_description: 'Puedes usar nuestro asistente de IA o escribirnos a support@docuseal.com si tienes preguntas.'
+    support_description: 'Escríbenos a info@integrascientific.com si tienes preguntas.'
     settings_template_description: 'Usa este botón para acceder a la configuración de tu cuenta.'
   doorkeeper:
     scopes:
@@ -2627,7 +2631,7 @@ it: &it
   save: Salva
   saving: Salvataggio in corso
   changes_have_been_saved: Le modifiche sono state salvate.
-  unlock_with_docuseal_pro: Sblocca con DocuSeal Pro
+  unlock_with_docuseal_pro: Non disponibile
   use_your_own_certificates_to_sign_and_verify_pdf_files: Usa i tuoi certificati per firmare e verificare i file PDF.
   upload_certificate: Carica certificato
   name: Nome
@@ -2757,6 +2761,8 @@ it: &it
   sign_out: Esci
   page_number: 'Pagina %{number}'
   powered_by: Fornito da
+  signing_engine_based_on: 'Motore di firma basato su'
+  source_code: 'Codice sorgente'
   qr_code: Codice QR
   print: Stampa
   scan: Scansiona
@@ -3187,8 +3193,8 @@ it: &it
   pro_user_seats_used: Posti utente Pro in uso
   manage: Gestisci
   manage_plan: Gestisci piano
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: "Questa sottomissione ha più firmatari, il che impedisce l'uso di un link di condivisione poiché non è chiaro quale firmatario sia responsabile di specifici campi. Per risolvere questo problema, segui questa <a href=\"https://www.docuseal.com/resources/pre-filling-recipients\" class=\"link font-bold\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">guida</a> per definire i dettagli predefiniti del firmatario."
-  welcome_to_docuseal: Benvenuto in DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: "Questa sottomissione ha più firmatari, il che impedisce l'uso di un link di condivisione poiché non è chiaro quale firmatario sia responsabile di specifici campi. Per risolvere questo problema, definisci i dettagli predefiniti del firmatario nel modello."
+  welcome_to_docuseal: Benvenuto in Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Inizia un tour rapido per imparare a creare e inviare il tuo primo documento.
   start_tour: Inizia il tour
   name_a_z: Nome A-Z
@@ -3264,13 +3270,13 @@ it: &it
   use_otp_code_to_access_the_api_key_html: Usa il codice <b>%{code}</b> per accedere alla chiave API.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Rispondi a questa email se non riconosci questa richiesta.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Il tuo account utente è stato archiviato. Contatta il tuo amministratore per ripristinare l'accesso al tuo account.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Non è stato possibile raggiungere la tua email. Questo può accadere se c'è stato un errore di digitazione nell'indirizzo o se la tua casella di posta non è disponibile. Contatta support@docuseal.com per accedere.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Non è stato possibile raggiungere la tua email. Questo può accadere se c'è stato un errore di digitazione nell'indirizzo o se la tua casella di posta non è disponibile. Contatta info@integrascientific.com per accedere.
   efficient_search_with_search_index: Ricerca efficiente con indice di ricerca
   reindex: Reindicizza
   build_search_index: Crea indice di ricerca
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: "Richiedere l'autenticazione a due fattori (2FA) con un'app di autenticazione (es. Google Authenticator, Authy). Tutti gli utenti che firmano documenti devono superare la verifica del secondo fattore utilizzando un codice sicuro oltre alla password."
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Aggiungere un ID firma univoco e una marca temporale a ogni firma per scopi di audit e tracciabilità insieme alla marca temporale. Parte delle impostazioni di conformità 21 CFR Parte 11 di DocuSeal.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Richiedere ai firmatari di fornire una motivazione prima di completare la firma (es. approvazioni, certificazioni). Parte delle impostazioni di conformità 21 CFR Parte 11 di DocuSeal.
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Aggiungere un ID firma univoco e una marca temporale a ogni firma per scopi di audit e tracciabilità insieme alla marca temporale. Parte delle impostazioni di conformità 21 CFR Parte 11 di Integra Sign.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Richiedere ai firmatari di fornire una motivazione prima di completare la firma (es. approvazioni, certificazioni). Parte delle impostazioni di conformità 21 CFR Parte 11 di Integra Sign.
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Consentire ai firmatari di creare firme digitando il proprio nome invece di disegnarle o caricarle.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Consentire ai firmatari di reinviare i moduli dopo il completamento, utile quando sono necessarie correzioni o più invii.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Consentire ai destinatari di rifiutare di firmare un documento. La notifica del motivo del rifiuto verrà inviata al richiedente della firma.
@@ -3351,7 +3357,7 @@ it: &it
   mcp_token_has_been_removed: Il token MCP è stato rimosso.
   enable_mcp_server: Abilita server MCP
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Tutte le connessioni MCP esistenti verranno interrotte immediatamente quando questa impostazione viene disattivata.
-  connect_to_docuseal_mcp: Connetti a DocuSeal MCP
+  connect_to_docuseal_mcp: Connetti a Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Aggiungi quanto segue alla configurazione del tuo client MCP
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Funziona con Claude Desktop, Cursor, Windsurf, VS Code e qualsiasi client compatibile con MCP.
   your_email_address_has_been_changed: Il tuo indirizzo email è stato modificato
@@ -3469,7 +3475,7 @@ it: &it
     settings: 'Impostazioni'
     settings_account_description: "Con impostazioni complete dell'account, puoi personalizzare l'esperienza di firma elettronica e invitare altri utenti."
     support: 'Supporto'
-    support_description: 'Puoi usare il nostro assistente AI oppure scriverci a support@docuseal.com se hai domande.'
+    support_description: 'Scrivici a info@integrascientific.com se hai domande.'
     settings_template_description: "Usa questo pulsante per accedere alla pagina delle impostazioni dell'account."
   doorkeeper:
     scopes:
@@ -3787,7 +3793,7 @@ fr: &fr
   save: Enregistrer
   saving: Enregistrement
   changes_have_been_saved: Les modifications ont été enregistrées.
-  unlock_with_docuseal_pro: Débloquer avec DocuSeal Pro
+  unlock_with_docuseal_pro: Non disponible
   use_your_own_certificates_to_sign_and_verify_pdf_files: Utilisez vos propres certificats pour signer et vérifier des fichiers PDF.
   upload_certificate: Téléverser un certificat
   name: Nom
@@ -3917,6 +3923,8 @@ fr: &fr
   sign_out: Se déconnecter
   page_number: Page %{number}
   powered_by: Propulsé par
+  signing_engine_based_on: 'Moteur de signature basé sur'
+  source_code: 'Code source'
   qr_code: Code QR
   print: Imprimer
   scan: Scanner
@@ -4347,8 +4355,8 @@ fr: &fr
   pro_user_seats_used: Places d’utilisateurs Pro utilisées
   manage: Gérer
   manage_plan: Gérer la formule
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: Cette soumission comporte plusieurs signataires, ce qui empêche l’utilisation d’un lien de partage car il n’est pas clair quel signataire est responsable de quels champs. Pour résoudre cela, suivez ce <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">guide</a> pour définir les détails du signataire par défaut.
-  welcome_to_docuseal: Bienvenue sur DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: Cette soumission comporte plusieurs signataires, ce qui empêche l’utilisation d’un lien de partage car il n’est pas clair quel signataire est responsable de quels champs. Pour résoudre cela, définissez les détails du signataire par défaut dans le modèle.
+  welcome_to_docuseal: Bienvenue sur Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Lancez une visite rapide pour apprendre à créer et envoyer votre premier document
   start_tour: Démarrer la visite
   name_a_z: Nom A‑Z
@@ -4420,13 +4428,13 @@ fr: &fr
   use_otp_code_to_access_the_api_key_html: Utilisez le code <b>%{code}</b> pour accéder à la clé API.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Veuillez répondre à cet e‑mail si vous ne reconnaissez pas cette demande.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Votre compte utilisateur a été archivé. Contactez votre administrateur pour rétablir l’accès à votre compte.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Votre e‑mail n’a pas pu être joint. Cela peut se produire en cas de faute de frappe dans votre adresse ou si votre boîte aux lettres n’est pas disponible. Veuillez contacter support@docuseal.com pour vous connecter.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Votre e‑mail n’a pas pu être joint. Cela peut se produire en cas de faute de frappe dans votre adresse ou si votre boîte aux lettres n’est pas disponible. Veuillez contacter info@integrascientific.com pour vous connecter.
   efficient_search_with_search_index: Recherche efficace avec index de recherche
   reindex: Réindexer
   build_search_index: Construire l’index de recherche
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: Exiger l’authentification à deux facteurs (2FA) avec une application d’authentification (p. ex., Google Authenticator, Authy). Tous les utilisateurs qui signent des documents doivent passer la vérification du second facteur à l’aide d’un code sécurisé en plus de leur mot de passe.
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Ajouter un identifiant de signature unique et un horodatage à chaque signature à des fins d’audit et de traçabilité, avec l’horodatage. Fait partie des paramètres de conformité 21 CFR Part 11 de DocuSeal.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Exiger que les signataires fournissent un motif de signature avant de finaliser leur signature (p. ex., approbations, certifications). Fait partie des paramètres de conformité 21 CFR Part 11 de DocuSeal.
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Ajouter un identifiant de signature unique et un horodatage à chaque signature à des fins d’audit et de traçabilité, avec l’horodatage. Fait partie des paramètres de conformité 21 CFR Part 11 de Integra Sign.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Exiger que les signataires fournissent un motif de signature avant de finaliser leur signature (p. ex., approbations, certifications). Fait partie des paramètres de conformité 21 CFR Part 11 de Integra Sign.
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Autoriser les signataires à créer des signatures en tapant leur nom au lieu de dessiner ou téléverser une signature.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Autoriser les signataires à soumettre à nouveau les formulaires après finalisation, utile pour des corrections ou soumissions multiples.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Autoriser les destinataires à refuser de signer un document. Le motif du refus sera notifié au demandeur de signature.
@@ -4508,7 +4516,7 @@ fr: &fr
   mcp_token_has_been_removed: Le jeton MCP a été supprimé.
   enable_mcp_server: Activer le serveur MCP
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Toutes les connexions MCP existantes seront arrêtées immédiatement lorsque ce paramètre est désactivé.
-  connect_to_docuseal_mcp: Se connecter à DocuSeal MCP
+  connect_to_docuseal_mcp: Se connecter à Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Ajoutez ce qui suit à la configuration de votre client MCP
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Fonctionne avec Claude Desktop, Cursor, Windsurf, VS Code et tout client compatible MCP.
   your_email_address_has_been_changed: Votre adresse e-mail a été modifiée
@@ -4626,7 +4634,7 @@ fr: &fr
     settings: Paramètres
     settings_account_description: Des paramètres de compte complets pour personnaliser l’expérience de signature et inviter d’autres utilisateurs.
     support: Support
-    support_description: Utilisez notre assistant IA en libre‑service ou contactez‑nous à support@docuseal.com pour toute question.
+    support_description: 'Écrivez-nous à info@integrascientific.com pour toute question.'
     settings_template_description: Utilisez ce bouton pour accéder à la page des paramètres de votre compte.
   doorkeeper:
     scopes:
@@ -4957,7 +4965,7 @@ pt: &pt
   save: Salvar
   saving: Salvando
   changes_have_been_saved: As alterações foram salvas.
-  unlock_with_docuseal_pro: Desbloquear com o DocuSeal Pro
+  unlock_with_docuseal_pro: Não disponível
   use_your_own_certificates_to_sign_and_verify_pdf_files: Use seus próprios certificados para assinar e verificar arquivos PDF.
   upload_certificate: Enviar certificado
   name: Nome
@@ -5087,6 +5095,8 @@ pt: &pt
   sign_out: Sair
   page_number: 'Página %{number}'
   powered_by: Desenvolvido por
+  signing_engine_based_on: 'Motor de assinatura baseado em'
+  source_code: 'Código-fonte'
   qr_code: Código QR
   print: Imprimir
   scan: Digitalizar
@@ -5517,8 +5527,8 @@ pt: &pt
   pro_user_seats_used: Lugares de usuário Pro em uso
   manage: Gerenciar
   manage_plan: Gerenciar plano
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Este envio tem vários signatários, o que impede o uso de um link de compartilhamento, pois não está claro qual signatário é responsável por quais campos. Para resolver isso, siga este <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">guia</a> para definir os detalhes padrão do signatário.'
-  welcome_to_docuseal: Bem-vindo ao DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Este envio tem vários signatários, o que impede o uso de um link de compartilhamento, pois não está claro qual signatário é responsável por quais campos. Para resolver isso, defina os detalhes padrão do signatário no modelo.'
+  welcome_to_docuseal: Bem-vindo ao Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Comece um tour rápido para aprender a criar e enviar seu primeiro documento.
   start_tour: Iniciar tour
   name_a_z: Nome A-Z
@@ -5594,13 +5604,13 @@ pt: &pt
   use_otp_code_to_access_the_api_key_html: Use o código <b>%{code}</b> para acessar a chave API.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Responda a este e-mail se você não reconhecer esta solicitação.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Sua conta de usuário foi arquivada. Entre em contato com o administrador para restaurar o acesso à sua conta.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Seu e-mail não pôde ser acessado. Isso pode acontecer se houve um erro de digitação no endereço ou se sua caixa de correio não estiver disponível. Entre em contato com support@docuseal.com para fazer login.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Seu e-mail não pôde ser acessado. Isso pode acontecer se houve um erro de digitação no endereço ou se sua caixa de correio não estiver disponível. Entre em contato com info@integrascientific.com para fazer login.
   efficient_search_with_search_index: Pesquisa eficiente com índice de busca
   reindex: Reindexar
   build_search_index: Construir índice de busca
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: "Exigir autenticação de dois fatores (2FA) com um aplicativo autenticador (ex.: Google Authenticator, Authy). Todos os usuários que assinam documentos devem passar pela verificação do segundo fator usando um código seguro além da senha."
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Adicionar um ID de assinatura exclusivo e um carimbo de data/hora a cada assinatura para fins de auditoria e rastreabilidade junto com o carimbo de data/hora. Parte das configurações de conformidade 21 CFR Parte 11 do DocuSeal.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: "Exigir que os signatários forneçam uma razão antes de completar a assinatura (ex.: aprovações, certificações). Parte das configurações de conformidade 21 CFR Parte 11 do DocuSeal."
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Adicionar um ID de assinatura exclusivo e um carimbo de data/hora a cada assinatura para fins de auditoria e rastreabilidade junto com o carimbo de data/hora. Parte das configurações de conformidade 21 CFR Parte 11 do Integra Sign.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: "Exigir que os signatários forneçam uma razão antes de completar a assinatura (ex.: aprovações, certificações). Parte das configurações de conformidade 21 CFR Parte 11 do Integra Sign."
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Permitir que os signatários criem assinaturas digitando seu nome em vez de desenhá-las ou carregá-las.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Permitir que os signatários reenviem formulários após o término, útil quando são necessárias correções ou múltiplos envios.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Permitir que os destinatários recusem assinar um documento. A notificação do motivo da recusa será enviada ao solicitante da assinatura.
@@ -5681,7 +5691,7 @@ pt: &pt
   mcp_token_has_been_removed: O token MCP foi removido.
   enable_mcp_server: Ativar servidor MCP
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Todas as conexões MCP existentes serão interrompidas imediatamente quando esta configuração for desativada.
-  connect_to_docuseal_mcp: Conectar ao DocuSeal MCP
+  connect_to_docuseal_mcp: Conectar ao Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Adicione o seguinte à configuração do seu cliente MCP
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Funciona com Claude Desktop, Cursor, Windsurf, VS Code e qualquer cliente compatível com MCP.
   your_email_address_has_been_changed: Seu endereço de e-mail foi alterado
@@ -5799,7 +5809,7 @@ pt: &pt
     settings: 'Configurações'
     settings_account_description: 'Com configurações completas de conta, você pode personalizar a experiência de assinatura eletrônica e convidar mais usuários.'
     support: 'Suporte'
-    support_description: 'Você pode usar nosso assistente de IA ou nos escrever para support@docuseal.com se tiver dúvidas.'
+    support_description: 'Escreva para info@integrascientific.com se tiver dúvidas.'
     settings_template_description: 'Use este botão para acessar a página de configurações da sua conta.'
   doorkeeper:
     scopes:
@@ -6130,7 +6140,7 @@ de: &de
   save: Speichern
   saving: Wird gespeichert
   changes_have_been_saved: Änderungen wurden gespeichert.
-  unlock_with_docuseal_pro: Mit DocuSeal Pro freischalten
+  unlock_with_docuseal_pro: Nicht verfügbar
   use_your_own_certificates_to_sign_and_verify_pdf_files: Verwenden Sie Ihre eigenen Zertifikate, um PDF-Dateien zu signieren und zu verifizieren.
   upload_certificate: Zertifikat hochladen
   name: Name
@@ -6260,6 +6270,8 @@ de: &de
   sign_out: Abmelden
   page_number: 'Seite %{number}'
   powered_by: Bereitgestellt von
+  signing_engine_based_on: 'Signatur-Engine basiert auf'
+  source_code: 'Quellcode'
   qr_code: QR-Code
   print: Drucken
   scan: Scannen
@@ -6690,8 +6702,8 @@ de: &de
   pro_user_seats_used: Verwendete Pro-Benutzerplätze
   manage: Verwalten
   manage_plan: Plan verwalten
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Diese Einreichung hat mehrere Unterzeichner, was die Nutzung eines Freigabelinks verhindert, da unklar ist, welcher Unterzeichner für welche Felder verantwortlich ist. Um dies zu lösen, folgen Sie dieser <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">Anleitung</a>, um die Standarddetails des Unterzeichners festzulegen.'
-  welcome_to_docuseal: Willkommen bei DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: 'Diese Einreichung hat mehrere Unterzeichner, was die Nutzung eines Freigabelinks verhindert, da unklar ist, welcher Unterzeichner für welche Felder verantwortlich ist. Um dies zu lösen, legen Sie die Standarddetails des Unterzeichners in der Vorlage fest.'
+  welcome_to_docuseal: Willkommen bei Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Starten Sie eine kurze Tour, um zu lernen, wie Sie Ihr erstes Dokument erstellen und versenden.
   start_tour: Starten
   name_a_z: Name A-Z
@@ -6767,13 +6779,13 @@ de: &de
   use_otp_code_to_access_the_api_key_html: Verwenden Sie den Code <b>%{code}</b>, um auf den API-Schlüssel zuzugreifen.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Bitte antworten Sie auf diese E-Mail, wenn Sie diese Anfrage nicht erkennen.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Ihr Benutzerkonto wurde archiviert. Wenden Sie sich an Ihren Administrator, um den Zugriff wiederherzustellen.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Ihre E-Mail konnte nicht erreicht werden. Dies kann passieren, wenn sich ein Tippfehler in Ihrer Adresse befindet oder Ihr Postfach nicht verfügbar ist. Bitte kontaktieren Sie support@docuseal.com, um sich anzumelden.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Ihre E-Mail konnte nicht erreicht werden. Dies kann passieren, wenn sich ein Tippfehler in Ihrer Adresse befindet oder Ihr Postfach nicht verfügbar ist. Bitte kontaktieren Sie info@integrascientific.com, um sich anzumelden.
   efficient_search_with_search_index: Effiziente Suche mit Suchindex
   reindex: Neu indexieren
   build_search_index: Suchindex erstellen
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: Zwei-Faktor-Authentifizierung (2FA) mit einer Authentifizierungs-App (z. B. Google Authenticator, Authy) erforderlich. Alle Benutzer, die Dokumente unterzeichnen, müssen zusätzlich zu ihrem Passwort die zweite Faktorprüfung mit einem sicheren Code bestehen.
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Fügen Sie jeder Signatur eine eindeutige Signatur-ID und einen Zeitstempel für Prüf- und Nachverfolgbarkeitszwecke hinzu. Teil der DocuSeal-Einstellungen zur 21 CFR Part 11-Compliance.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Unterzeichner müssen vor Abschluss ihrer Signatur einen Grund für die Unterzeichnung angeben (z. B. Genehmigungen, Zertifizierungen). Teil der DocuSeal-Einstellungen zur 21 CFR Part 11-Compliance.
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Fügen Sie jeder Signatur eine eindeutige Signatur-ID und einen Zeitstempel für Prüf- und Nachverfolgbarkeitszwecke hinzu. Teil der Integra Sign-Einstellungen zur 21 CFR Part 11-Compliance.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Unterzeichner müssen vor Abschluss ihrer Signatur einen Grund für die Unterzeichnung angeben (z. B. Genehmigungen, Zertifizierungen). Teil der Integra Sign-Einstellungen zur 21 CFR Part 11-Compliance.
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Unterzeichner dürfen Signaturen erstellen, indem sie ihren Namen eingeben, statt eine Signatur zu zeichnen oder hochzuladen.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Unterzeichner dürfen Formulare nach Abschluss erneut einreichen – nützlich für Korrekturen oder mehrere Einreichungen.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Empfänger dürfen die Unterzeichnung eines Dokuments ablehnen. Die Benachrichtigung mit dem Ablehnungsgrund wird an den Anforderer der Signatur gesendet.
@@ -6854,7 +6866,7 @@ de: &de
   mcp_token_has_been_removed: Das MCP-Token wurde entfernt.
   enable_mcp_server: MCP-Server aktivieren
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Alle bestehenden MCP-Verbindungen werden sofort gestoppt, wenn diese Einstellung deaktiviert wird.
-  connect_to_docuseal_mcp: Mit DocuSeal MCP verbinden
+  connect_to_docuseal_mcp: Mit Integra Sign MCP verbinden
   add_the_following_to_your_mcp_client_configuration: Fügen Sie Folgendes zu Ihrer MCP-Client-Konfiguration hinzu
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Funktioniert mit Claude Desktop, Cursor, Windsurf, VS Code und jedem MCP-kompatiblen Client.
   your_email_address_has_been_changed: Ihre E-Mail-Adresse wurde geändert
@@ -6972,7 +6984,7 @@ de: &de
     settings: 'Einstellungen'
     settings_account_description: 'Mit umfangreichen Kontoeinstellungen können Sie das Signiererlebnis anpassen und weitere Benutzer einladen.'
     support: 'Support'
-    support_description: 'Sie können unseren KI-Assistenten nutzen oder uns bei Fragen an support@docuseal.com schreiben.'
+    support_description: 'Schreiben Sie uns bei Fragen an info@integrascientific.com.'
     settings_template_description: 'Über diese Schaltfläche gelangen Sie zu den Kontoeinstellungen.'
   doorkeeper:
     scopes:
@@ -7119,6 +7131,8 @@ pl:
   verification_code: Kod Weryfikacyjny
   resend_code: Wyślij Kod Ponownie
   powered_by: 'Napędzany przez'
+  signing_engine_based_on: 'Silnik podpisu oparty na'
+  source_code: 'Kod źródłowy'
   count_documents_signed_with_html: '<b>%{count}</b> dokumentów podpisanych za pomocą'
   open_source_documents_software: 'oprogramowanie do dokumentów open source'
   eu_data_residency: Dane w UE
@@ -7138,7 +7152,7 @@ pl:
   your_verification_code_to_access_the_name: 'Twój kod weryfikacyjny do uzyskania dostępu do "%{name}":'
   please_reply_to_this_email_if_you_didnt_request_this: Odpowiedz na ten e-mail, jeśli nie prosiłeś o to.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Twoje konto użytkownika zostało zarchiwizowane. Skontaktuj się z administratorem, aby przywrócić dostęp do konta.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Nie udało się uzyskać dostępu do Twojego adresu e-mail. Może to być spowodowane literówką w adresie lub niedostępnością skrzynki. Skontaktuj się z support@docuseal.com, aby się zalogować.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Nie udało się uzyskać dostępu do Twojego adresu e-mail. Może to być spowodowane literówką w adresie lub niedostępnością skrzynki. Skontaktuj się z info@integrascientific.com, aby się zalogować.
   verification_required_refresh_the_page_and_pass_2fa: Weryfikacja wymagana, odśwież stronę i przejdź uwierzytelnienie dwuskładnikowe.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: Nadawca zażądał uwierzytelniania dwuskładnikowego za pośrednictwem hasła jednorazowego wysłanego na Twój adres e-mail <b>%{email}</b>.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: Skontaktuj się z nadawcą, aby podać swój adres e-mail do uwierzytelniania dwuskładnikowego.
@@ -7261,6 +7275,8 @@ uk:
   verification_code: Код перевірки
   resend_code: Надіслати код знову
   powered_by: 'Працює на базі'
+  signing_engine_based_on: 'Механізм підпису на основі'
+  source_code: 'Вихідний код'
   count_documents_signed_with_html: '<b>%{count}</b> документів підписано за допомогою'
   open_source_documents_software: 'відкрите програмне забезпечення для документів'
   eu_data_residency: 'Зберігання даних в ЄС'
@@ -7280,7 +7296,7 @@ uk:
   your_verification_code_to_access_the_name: 'Ваш код доступу до "%{name}":'
   please_reply_to_this_email_if_you_didnt_request_this: Відповідайте на цей лист, якщо ви цього не запитували.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Ваш обліковий запис було архівовано. Зверніться до адміністратора, щоб відновити доступ.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Не вдалося отримати доступ до вашої електронної пошти. Це може статися, якщо була допущена помилка в адресі або ваша скринька недоступна. Зверніться до support@docuseal.com, щоб увійти.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Не вдалося отримати доступ до вашої електронної пошти. Це може статися, якщо була допущена помилка в адресі або ваша скринька недоступна. Зверніться до info@integrascientific.com, щоб увійти.
   verification_required_refresh_the_page_and_pass_2fa: Необхідна верифікація, оновіть сторінку та пройдіть двофакторну автентифікацію.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: Відправник запитав двофакторну автентифікацію за допомогою одноразового пароля, надісланого на вашу електронну пошту <b>%{email}</b>.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: Будь ласка, зв'яжіться з відправником, щоб вказати вашу електронну пошту для двофакторної автентифікації.
@@ -7403,6 +7419,8 @@ cs:
   verification_code: Ověřovací kód
   resend_code: Znovu odeslat kód
   powered_by: 'Poháněno'
+  signing_engine_based_on: 'Podpisové jádro založené na'
+  source_code: 'Zdrojový kód'
   count_documents_signed_with_html: '<b>%{count}</b> dokumentů podepsáno pomocí'
   open_source_documents_software: 'open source software pro dokumenty'
   eu_data_residency: 'Uložení dat v EU'
@@ -7422,7 +7440,7 @@ cs:
   your_verification_code_to_access_the_name: 'Váš ověřovací kód pro přístup k "%{name}":'
   please_reply_to_this_email_if_you_didnt_request_this: Odpovězte na tento e-mail, pokud jste o to nežádali.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Váš uživatelský účet byl archivován. Kontaktujte svého administrátora pro obnovení přístupu.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Na váš e-mail se nepodařilo doručit zprávu. To se může stát, pokud je v adrese překlep nebo vaše schránka není dostupná. Pro přihlášení kontaktujte support@docuseal.com.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Na váš e-mail se nepodařilo doručit zprávu. To se může stát, pokud je v adrese překlep nebo vaše schránka není dostupná. Pro přihlášení kontaktujte info@integrascientific.com.
   verification_required_refresh_the_page_and_pass_2fa: Ověření vyžadováno. Aktualizujte stránku a dokončete dvoufaktorové ověření.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: Odesílatel požádal o dvoufaktorové ověření pomocí jednorázového hesla odeslaného na vaši e-mailovou adresu <b>%{email}</b>.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: Prosím kontaktujte odesílatele a uveďte svůj e-mail pro dvoufaktorové ověření.
@@ -7531,6 +7549,8 @@ he:
   verification_code: קוד אימות
   resend_code: שלח קוד מחדש
   powered_by: 'מופעל על ידי'
+  signing_engine_based_on: 'מנוע החתימה מבוסס על'
+  source_code: 'קוד מקור'
   count_documents_signed_with_html: '<b>%{count}</b> מסמכים נחתמו באמצעות'
   open_source_documents_software: 'תוכנה בקוד פתוח למסמכים'
   eu_data_residency: 'נתונים באיחוד האירופי'
@@ -7550,7 +7570,7 @@ he:
   your_verification_code_to_access_the_name: 'קוד האימות שלך לגישה ל-%{name}:'
   please_reply_to_this_email_if_you_didnt_request_this: 'השב למייל זה אם לא ביקשת זאת.'
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: החשבון שלך הועבר לארכיון. פנה למנהל המערכת כדי לשחזר את הגישה.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: לא ניתן היה לגשת לדוא"ל שלך. ייתכן שזה קרה עקב שגיאת כתיב בכתובת או אם תיבת הדואר אינה זמינה. אנא פנה ל־support@docuseal.com כדי להתחבר.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: לא ניתן היה לגשת לדוא"ל שלך. ייתכן שזה קרה עקב שגיאת כתיב בכתובת או אם תיבת הדואר אינה זמינה. אנא פנה ל־info@integrascientific.com כדי להתחבר.
   verification_required_refresh_the_page_and_pass_2fa: נדרש אימות. רענן את הדף והשלם אימות דו-שלבי.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: השולח ביקש אימות דו-שלבי באמצעות סיסמה חד-פעמית שנשלחה לכתובת הדוא"ל שלך <b>%{email}</b>.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: אנא פנה לשולח וציין את כתובת הדוא"ל שלך לאימות דו-שלבי.
@@ -7831,7 +7851,7 @@ nl: &nl
   save: Opslaan
   saving: Opslaan
   changes_have_been_saved: Wijzigingen zijn opgeslagen.
-  unlock_with_docuseal_pro: Ontgrendel met DocuSeal Pro
+  unlock_with_docuseal_pro: Niet beschikbaar
   use_your_own_certificates_to_sign_and_verify_pdf_files: Gebruik uw eigen certificaten om PDF-bestanden te ondertekenen en te verifiëren.
   upload_certificate: Certificaat uploaden
   name: Naam
@@ -7961,6 +7981,8 @@ nl: &nl
   sign_out: Afmelden
   page_number: Pagina %{number}
   powered_by: Aangedreven door
+  signing_engine_based_on: 'Ondertekeningsengine gebaseerd op'
+  source_code: 'Broncode'
   qr_code: QR-code
   print: Afdrukken
   scan: Scannen
@@ -8391,8 +8413,8 @@ nl: &nl
   pro_user_seats_used: Gebruikersplaatsen Pro gebruikt
   manage: Beheren
   manage_plan: Abonnement beheren
-  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: Deze inzending heeft meerdere ondertekenaars, waardoor het gebruik van een deellink niet mogelijk is omdat onduidelijk is welke ondertekenaar verantwoordelijk is voor specifieke velden. Volg deze <a href="https://www.docuseal.com/resources/pre-filling-recipients" class="link font-bold" rel="noopener noreferrer nofollow" target="_blank">handleiding</a> om de standaardgegevens van de ondertekenaar te definiëren.
-  welcome_to_docuseal: Welkom bij DocuSeal
+  this_submission_has_multiple_signers_which_prevents_the_use_of_a_sharing_link_html: Deze inzending heeft meerdere ondertekenaars, waardoor het gebruik van een deellink niet mogelijk is omdat onduidelijk is welke ondertekenaar verantwoordelijk is voor specifieke velden. Definieer de standaardgegevens van de ondertekenaar in het sjabloon om dit op te lossen.
+  welcome_to_docuseal: Welkom bij Integra Sign
   start_a_quick_tour_to_learn_how_to_create_and_send_your_first_document: Start een korte rondleiding om te leren hoe u uw eerste document maakt en verzendt
   start_tour: Rondleiding starten
   name_a_z: Naam A-Z
@@ -8464,13 +8486,13 @@ nl: &nl
   use_otp_code_to_access_the_api_key_html: Gebruik de code <b>%{code}</b> om toegang te krijgen tot de API-sleutel.
   please_reply_to_this_email_if_you_dont_recognize_this_request: Reageer op deze e-mail als u dit verzoek niet herkent.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: Uw gebruikersaccount is gearchiveerd. Neem contact op met uw beheerder om de toegang tot uw account te herstellen.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Uw e-mailadres kon niet worden bereikt. Dit kan gebeuren als er een typefout in uw adres zit of als uw mailbox niet beschikbaar is. Neem contact op met support@docuseal.com om in te loggen.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: Uw e-mailadres kon niet worden bereikt. Dit kan gebeuren als er een typefout in uw adres zit of als uw mailbox niet beschikbaar is. Neem contact op met info@integrascientific.com om in te loggen.
   efficient_search_with_search_index: Efficiënt zoeken met zoekindex
   reindex: Opnieuw indexeren
   build_search_index: Zoekindex opbouwen
   require_two_factor_authentication_2fa_with_an_authenticator_app_e_g_google_authenticator_authy_all_users_signing_documents_must_pass_the_second_factor_verification_using_a_secure_code_in_addition_to_their_password: Tweeledige verificatie (2FA) met een authenticator-app (bijv. Google Authenticator, Authy) vereisen. Alle gebruikers die documenten ondertekenen moeten naast hun wachtwoord de tweede factor verifiëren met een beveiligde code.
-  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Voeg voor audit- en traceerbaarheidsdoeleinden een unieke handtekening-ID en tijdstempel toe aan elke handtekening. Onderdeel van de 21 CFR Part 11-nalevingsinstellingen van DocuSeal.
-  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Vereist dat de ondertekenaar vóór het voltooien van zijn handtekening een reden opgeeft (bijv. goedkeuringen, certificeringen). Onderdeel van de 21 CFR Part 11-nalevingsinstellingen van DocuSeal.
+  add_a_unique_signature_id_and_timestamp_to_each_signature_for_audit_and_traceability_purposes_along_with_the_timestamp_part_of_docuseals_21_cfr_part_11_compliance_settings: Voeg voor audit- en traceerbaarheidsdoeleinden een unieke handtekening-ID en tijdstempel toe aan elke handtekening. Onderdeel van de 21 CFR Part 11-nalevingsinstellingen van Integra Sign.
+  require_signer_to_provide_a_reason_for_signing_before_completing_their_signature_e_g_approvals_certifications_part_of_docuseals_21_cfr_part_11_compliance_settings: Vereist dat de ondertekenaar vóór het voltooien van zijn handtekening een reden opgeeft (bijv. goedkeuringen, certificeringen). Onderdeel van de 21 CFR Part 11-nalevingsinstellingen van Integra Sign.
   allow_signers_to_create_signatures_by_typing_their_name_instead_of_drawing_or_uploading_one: Sta ondertekenaars toe handtekeningen te maken door hun naam te typen in plaats van te tekenen of te uploaden.
   allow_signers_to_resubmit_forms_after_completion_useful_when_corrections_or_multiple_submissions_are_needed: Sta ondertekenaars toe formulieren na voltooiing opnieuw in te dienen; nuttig wanneer correcties of meerdere inzendingen nodig zijn.
   allow_recipients_to_decline_signing_a_document_the_decline_reason_notification_will_be_sent_to_the_signature_requester: Sta ontvangers toe het ondertekenen van een document te weigeren. De melding met de reden van weigering wordt naar de aanvrager van de handtekening gestuurd.
@@ -8551,7 +8573,7 @@ nl: &nl
   mcp_token_has_been_removed: Het MCP-token is verwijderd.
   enable_mcp_server: MCP-server inschakelen
   all_existing_mcp_connections_will_be_stopped_immediately_when_this_setting_is_disabled: Alle bestaande MCP-verbindingen worden onmiddellijk gestopt wanneer deze instelling wordt uitgeschakeld.
-  connect_to_docuseal_mcp: Verbinden met DocuSeal MCP
+  connect_to_docuseal_mcp: Verbinden met Integra Sign MCP
   add_the_following_to_your_mcp_client_configuration: Voeg het volgende toe aan uw MCP-clientconfiguratie
   works_with_claude_desktop_cursor_windsurf_vs_code_and_any_mcp_compatible_client: Werkt met Claude Desktop, Cursor, Windsurf, VS Code en elke MCP-compatibele client.
   your_email_address_has_been_changed: Uw e-mailadres is gewijzigd
@@ -8669,7 +8691,7 @@ nl: &nl
     settings: Instellingen
     settings_account_description: Met uitgebreide accountinstellingen kunt u de eSigning-ervaring aanpassen en meer gebruikers uitnodigen.
     support: Ondersteuning
-    support_description: U kunt onze selfservice AI-assistent gebruiken of ons e-mailen op support@docuseal.com als u vragen heeft.
+    support_description: 'E-mail ons op info@integrascientific.com als u vragen heeft.'
     settings_template_description: Gebruik deze knop om naar uw accountinstellingenpagina te gaan.
   doorkeeper:
     scopes:
@@ -8803,6 +8825,8 @@ ar:
   verification_code: رمز التحقق
   resend_code: إعادة إرسال الرمز
   powered_by: 'مشغل بواسطة'
+  signing_engine_based_on: 'محرك التوقيع مبني على'
+  source_code: 'الشفرة المصدرية'
   count_documents_signed_with_html: 'تم توقيع <b>%{count}</b> مستندًا باستخدام'
   open_source_documents_software: 'برنامج مستندات مفتوح المصدر'
   eu_data_residency: 'بيانات في الاتحاد الأوروبي'
@@ -8822,7 +8846,7 @@ ar:
   your_verification_code_to_access_the_name: 'رمز التحقق الخاص بك للوصول إلى "%{name}":'
   please_reply_to_this_email_if_you_didnt_request_this: 'يرجى الرد على هذا البريد إذا لم تطلب ذلك.'
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: تمت أرشفة حسابك. يرجى التواصل مع المسؤول لاستعادة الوصول إلى حسابك.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: تعذّر الوصول إلى بريدك الإلكتروني. قد يحدث هذا في حال وجود خطأ في العنوان أو إذا كان صندوق البريد غير متاح. يرجى التواصل مع support@docuseal.com لتسجيل الدخول.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: تعذّر الوصول إلى بريدك الإلكتروني. قد يحدث هذا في حال وجود خطأ في العنوان أو إذا كان صندوق البريد غير متاح. يرجى التواصل مع info@integrascientific.com لتسجيل الدخول.
   verification_required_refresh_the_page_and_pass_2fa: مطلوب التحقق. قم بتحديث الصفحة وأكمل المصادقة الثنائية.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: طلب المرسل المصادقة الثنائية عبر كلمة مرور لمرة واحدة مرسلة إلى عنوان بريدك الإلكتروني <b>%{email}</b>.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: يرجى الاتصال بالمرسل لتحديد عنوان بريدك الإلكتروني للمصادقة الثنائية.
@@ -8917,6 +8941,8 @@ ko:
   verification_code: 인증 코드
   resend_code: 코드 재전송
   powered_by: '제공:'
+  signing_engine_based_on: '서명 엔진 기반:'
+  source_code: '소스 코드'
   count_documents_signed_with_html: '<b>%{count}</b>개의 문서가 다음을 통해 서명됨'
   open_source_documents_software: '오픈소스 문서 소프트웨어'
   eu_data_residency: 'EU 데이터 저장 위치'
@@ -8936,7 +8962,7 @@ ko:
   your_verification_code_to_access_the_name: '"%{name}"에 액세스하기 위한 인증 코드:'
   please_reply_to_this_email_if_you_didnt_request_this: 요청하지 않았다면 이 이메일에 회신하세요.
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: 사용자 계정이 보관되었습니다. 계정 접근을 복원하려면 관리자에게 문의하세요.
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: 이메일에 접근할 수 없습니다. 주소에 오타가 있거나 메일박스가 사용 불가능한 경우 발생할 수 있습니다. 로그인하려면 support@docuseal.com에 문의하세요.
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: 이메일에 접근할 수 없습니다. 주소에 오타가 있거나 메일박스가 사용 불가능한 경우 발생할 수 있습니다. 로그인하려면 info@integrascientific.com에 문의하세요.
   verification_required_refresh_the_page_and_pass_2fa: 인증이 필요합니다. 페이지를 새로 고치고 2단계 인증을 완료하세요.
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: 발신자가 <b>%{email}</b> 이메일 주소로 전송된 일회용 비밀번호를 통해 2단계 인증을 요청했습니다.
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: 2단계 인증을 위해 이메일 주소를 지정하려면 요청자에게 문의하세요.
@@ -9031,6 +9057,8 @@ ja:
   verification_code: 認証コード
   resend_code: コードを再送信
   powered_by: '提供元：'
+  signing_engine_based_on: '署名エンジンの基盤：'
+  source_code: 'ソースコード'
   count_documents_signed_with_html: '<b>%{count}</b> 件のドキュメントが以下で署名されました'
   open_source_documents_software: 'オープンソースのドキュメントソフトウェア'
   eu_data_residency: 'EU データ保存場所'
@@ -9050,7 +9078,7 @@ ja:
   your_verification_code_to_access_the_name: '"%{name}" へアクセスするための認証コード：'
   please_reply_to_this_email_if_you_didnt_request_this: このリクエストを行っていない場合は、このメールに返信してください。
   your_user_account_has_been_archived_contact_your_administrator_to_restore_access_to_your_account: あなたのユーザーアカウントはアーカイブされました。アクセスを復元するには管理者に連絡してください。
-  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: メールにアクセスできませんでした。アドレスの入力ミスやメールボックスが利用できない場合に発生することがあります。ログインするには support@docuseal.com に連絡してください。
+  your_email_could_not_be_reached_this_may_happen_if_there_was_a_typo_in_your_address_or_if_your_mailbox_is_not_available_please_contact_support_email_to_log_in: メールにアクセスできませんでした。アドレスの入力ミスやメールボックスが利用できない場合に発生することがあります。ログインするには info@integrascientific.com に連絡してください。
   verification_required_refresh_the_page_and_pass_2fa: 認証が必要です。ページを更新して2段階認証を完了してください。
   the_sender_has_requested_a_two_factor_authentication_via_one_time_password_sent_to_your_email_html: 送信者は、<b>%{email}</b> メールアドレスに送信されたワンタイムパスワードによる2段階認証を要求しました。
   please_contact_the_requester_to_specify_your_email_for_two_factor_authentication: 2段階認証用にメールアドレスを指定するために、送信者にお問い合わせください。

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'up' => 'rails/health#show'
   get 'manifest' => 'pwa#manifest'
+  get 'source' => 'source#show', as: :source
 
   devise_for :users, path: '/', only: %i[sessions passwords],
                      controllers: { sessions: 'sessions', passwords: 'passwords' }

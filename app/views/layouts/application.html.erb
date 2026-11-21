@@ -34,6 +34,11 @@
     <main class="max-w-6xl mx-auto px-4 md:px-2 mb-8">
       <%= yield %>
     </main>
+    <% unless turbo_native_app? %>
+      <footer class="max-w-6xl mx-auto px-4 md:px-2 mb-6 text-center text-xs text-base-content/70">
+        <%= render 'shared/attribution_line' %>
+      </footer>
+    <% end %>
     <% if flash.present? %><%= render 'shared/flash' %><% end %>
     <%= render 'shared/body_scripts' %>
   </body>
