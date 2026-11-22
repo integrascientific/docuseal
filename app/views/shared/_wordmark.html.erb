@@ -1,0 +1,24 @@
+<%# The Integra Scientific wordmark lockup, set exactly as the company website's nav bar sets it
+    (integra-web/components/NavBar.tsx): the symbol alone, INTEGRA in Montserrat Black with
+    tracking-tighter and mr-1, SCIENTIFIC in Inter Light with tracking-tight and opacity-90, uppercase,
+    one line. Size comes from the caller's `class` (a text-* utility); the symbol and the gap scale
+    with it in em, at the website's proportions (symbol 1.33-1.5x the type size, gap-2/gap-3).
+
+    tone: :light (default) for Paper/Cream/white: the teal symbol, INTEGRA wordmark navy, SCIENTIFIC
+          wordmark teal.
+          :dark for plum/navy surfaces: the white symbol and white words. The brand forbids the teal
+          symbol on plum.
+
+    The product name ("Integra Sign") is never part of this lockup; callers that need it set it
+    beside or under it as a subordinate label. Guarded by test/integra-brand-tokens.test.mjs; also
+    listed in tailwind.form.config.js so the signing pages' stylesheet carries these utilities. %>
+<% dark = local_assigns.fetch(:tone, :light).to_sym == :dark %>
+<span class="inline-flex items-center gap-[0.5em] leading-none <%= local_assigns[:class] %>">
+  <img src="<%= dark ? '/logo_no_text_white.png' : '/logo_no_text.png' %>" alt="" aria-hidden="true" class="h-[1.4em] w-auto shrink-0">
+  <%# The space between the words is collapsed by the flex container (mr-1 is the visible gap, as on
+      the website) but keeps the text "Integra Scientific" for assistive technology. %>
+  <span class="flex items-center uppercase">
+    <span class="font-montserrat font-black tracking-tighter mr-1 <%= dark ? 'text-white' : 'text-integra-wordmark-navy' %>">Integra</span>
+    <span class="font-inter font-light tracking-tight opacity-90 <%= dark ? 'text-white' : 'text-integra-wordmark-teal' %>">Scientific</span>
+  </span>
+</span>

@@ -15,8 +15,20 @@
     font-display: swap;
   }
 
+  /* The wordmark face: INTEGRA in the lockup (shared/_wordmark) is Montserrat Black, as on the company
+     website. The file is the website's variable latin subset (wght 100-900), so 900 is a real weight,
+     not a synthesised bold. Tailwind family token: font-montserrat (tailwind.config.js). */
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/montserrat-latin-wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
   html[data-theme] {
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-weight: 400;
   }
 
   html[data-theme] h1,
@@ -24,5 +36,32 @@
   html[data-theme] h3,
   html[data-theme] .integra-heading {
     font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Canonical weights (integra-brand skill): body Inter 400/600, headings Manrope 600/700/800,
+     set as a scale — h1 800, h2 700, h3 600 — and .integra-heading 700 for a heading that is not
+     an h1-h3. The h1-h3 and b/strong selectors weigh 0,0,2 on purpose: they beat Tailwind's
+     preflight (`h1 { font-weight: inherit }`, `b, strong { font-weight: bolder }`, 0,0,1), which
+     loads after this partial, and they lose to any font-* utility (0,1,0) that a view sets, so an
+     upstream heading with an explicit weight keeps it. .integra-heading (0,1,1) is opt-in, so it
+     wins over a utility on the same element. */
+  html:where([data-theme]) :is(b, strong) {
+    font-weight: 600;
+  }
+
+  html:where([data-theme]) h1 {
+    font-weight: 800;
+  }
+
+  html:where([data-theme]) h2 {
+    font-weight: 700;
+  }
+
+  html:where([data-theme]) h3 {
+    font-weight: 600;
+  }
+
+  html:where([data-theme]) .integra-heading {
+    font-weight: 700;
   }
 </style>
