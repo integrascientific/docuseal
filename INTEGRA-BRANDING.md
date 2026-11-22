@@ -207,7 +207,17 @@ sends it through Microsoft 365 as `info@integrascientific.com`. Replies go to th
   and test keeps `:test`.
 - **Unconfigured, it fails loudly, never silently:** an ERROR at boot naming the missing variables, and
   `IntegraMail::NotConfigured` at send. `raise_delivery_errors` is forced on, so the job fails and retries.
-- **Not carried:** attachments (a WARN names them), and DocuSeal's From/Reply-To.
+- **Attachments ARE carried** (plan §15, issue #578): every part of `mail.attachments` goes as
+  `{ name, contentType, contentBase64 }`, unchanged. The signed PDF and the audit log are DocuSeal's artefacts and nothing here
+  opens, re-renders or renames them — a second generator would be a second author. The route's limits (10 files, 2,800,000
+  decoded bytes each and together) are checked **before the first post**, so a message too big fails with its reason instead of
+  an anonymous gateway error, and **never reaches a recipient**.
+- **DocuSeal's own silent trim is now a loud failure.** `SubmitterMailer` stops adding files once they pass its
+  `MAX_ATTACHMENTS_SIZE` (10 MB) and sends the rest **as if complete** — and the file left out can be the signed document.
+  `NoSilentTrim` raises instead while this delivery method is active. A file is never dropped to make the rest fit.
+- **The "files were dropped" warning is gone**, because the cause is gone. A warning that outlives its cause teaches people to
+  ignore the one that matters.
+- **Not carried:** DocuSeal's own From/Reply-To — the message goes as `info@integrascientific.com`, and the Exchange rule signs it.
 - Guard: `test/integra-mail-delivery.test.mjs` (reads the file; no Ruby needed).
 
 After a rebase, check that `lib/action_mailer_configs_interceptor.rb` still keeps a message's delivery method

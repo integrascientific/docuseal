@@ -9,8 +9,8 @@
 # it in the Integra e-mail frame and sends it through Microsoft 365 as info@integrascientific.com.
 #
 # Nothing else in DocuSeal's mail changes: the mailers, their views, variables, triggers and conditions are
-# upstream's, untouched. Only the plain-text part leaves this process (the route accepts no HTML: the shell
-# is Integra's), with the subject and each recipient's address and display name.
+# upstream's, untouched. The plain-text part leaves this process (the route accepts no HTML: the shell is
+# Integra's), with the subject, each recipient's address and display name, and the message's attachments.
 #
 # CONFIGURATION (environment, set by integra-portal/infra/esign.ts):
 #   INTEGRA_MAIL_URL    the route, https://<CRM sidecar>/sign-mail — HTTPS only
@@ -39,8 +39,21 @@
 # one fails the job retries the whole message, and the earlier recipients may receive it twice — duplicated,
 # never lost.
 #
-# ATTACHMENTS are not carried (the route's shape has none): a completed copy arrives with its link to the
-# signed document but without the PDF and audit log. Each such message logs a WARN naming the files.
+# ATTACHMENTS are DocuSeal's own, passed through unchanged: every part of `mail.attachments` goes as
+# { name, contentType, contentBase64 } — the file name DocuSeal gave it, its MIME type, and its bytes in strict
+# base64. Nothing here opens, re-renders or renames a file: the signed PDF and the audit log are DocuSeal's
+# artefacts, and a second generator would be a second author. The completed copy therefore arrives with the
+# signed document and the audit log it promises.
+#
+# LIMITS are the route's (crm/app/src/functions/sign-mail.ts: MAX_SIGN_MAIL_ATTACHMENTS, _ATTACHMENT_BYTES,
+# _TOTAL_BYTES), checked here before the first post so a message too big for the route fails with its reason
+# instead of an anonymous gateway error, and before anyone receives it. Over a limit, IntegraMail::AttachmentsRefused
+# is raised naming the code, the number and the limit: the job fails and retries, the message is NOT sent to
+# anyone, and the document must be delivered another way. A file is never dropped to make the rest fit.
+#
+# DOCUSEAL'S OWN TRIM. SubmitterMailer stops adding files once they pass its MAX_ATTACHMENTS_SIZE (10 MB) and sends
+# the rest as if complete — the file left out can be the signed document. While this delivery method is active,
+# IntegraMail::NoSilentTrim makes that a raise instead (the route could never carry such a set anyway).
 
 require 'json'
 require 'net/http'
@@ -50,6 +63,7 @@ require 'uri'
 module IntegraMail
   class NotConfigured < StandardError; end
   class DeliveryFailed < StandardError; end
+  class AttachmentsRefused < DeliveryFailed; end
 
   OPEN_TIMEOUT = 5
   WRITE_TIMEOUT = 10
@@ -58,6 +72,11 @@ module IntegraMail
 
   MAX_SUBJECT = 300
   MAX_NAME = 200
+
+  # The route's limits (sign-mail.ts). Decoded bytes; base64 adds a third on the wire.
+  MAX_ATTACHMENTS = 10
+  MAX_ATTACHMENT_BYTES = 2_800_000
+  MAX_ATTACHMENTS_TOTAL_BYTES = 2_800_000
 
   module_function
 
@@ -137,10 +156,51 @@ module IntegraMail
     list.reject { |address, _| address.blank? }.uniq { |address, _| address.downcase }
   end
 
-  def payload_for(mail, address, name)
+  # Every attachment part of the message, as DocuSeal made it: [[{ name:, contentType:, contentBase64: }, bytes], ...].
+  # contentType is the part's MIME type without the parameters the Mail gem appends (`; filename=...`).
+  # pack('m0') is strict base64 (no line breaks), which is what the route accepts.
+  def attachments_of(mail)
+    mail.attachments.map do |part|
+      bytes = part.body.decoded
+      [{ name: utf8(part.filename), contentType: part.mime_type.to_s, contentBase64: [bytes].pack('m0') }, bytes.bytesize]
+    end
+  end
+
+  def refused(code, reason)
+    "Integra Sign could not send e-mail: #{code}: #{reason}. The message was NOT sent to anyone; " \
+      'deliver the document another way (the completed copy\'s review link, or by hand).'
+  end
+
+  # The route's three limits, before anything is posted. Raises; never trims.
+  def check_attachments!(attachments)
+    if attachments.size > MAX_ATTACHMENTS
+      raise AttachmentsRefused,
+            refused('too_many_attachments', "#{attachments.size} attachments; at most #{MAX_ATTACHMENTS} can be sent")
+    end
+
+    total = 0
+    attachments.each do |file, bytes|
+      if bytes > MAX_ATTACHMENT_BYTES
+        raise AttachmentsRefused,
+              refused('attachment_too_large',
+                      "#{file[:name]} is #{bytes} bytes; one file can be at most #{MAX_ATTACHMENT_BYTES} bytes")
+      end
+
+      total += bytes
+    end
+
+    return if total <= MAX_ATTACHMENTS_TOTAL_BYTES
+
+    raise AttachmentsRefused,
+          refused('attachments_total_too_large',
+                  "the attachments total #{total} bytes; one message can carry at most #{MAX_ATTACHMENTS_TOTAL_BYTES} bytes")
+  end
+
+  def payload_for(mail, address, name, files = [])
     payload = { to: address, subject: single_line(utf8(mail.subject), MAX_SUBJECT), text: text_of(mail) }
     display = single_line(utf8(name), MAX_NAME) if name
     payload[:toName] = display if display.present?
+    payload[:attachments] = files if files.any?
     payload
   end
 
@@ -191,22 +251,39 @@ module IntegraMail
       recipients = IntegraMail.recipients(mail)
       raise DeliveryFailed, 'Integra Sign could not send e-mail: the message has no recipient.' if recipients.empty?
 
-      if mail.attachments.any?
-        Rails.logger.warn(
-          "[integra_mail] #{mail.attachments.size} attachment(s) not carried (the route takes text only): " \
-          "#{mail.attachments.map(&:filename).join(', ')}"
-        )
-      end
+      attachments = IntegraMail.attachments_of(mail)
+      IntegraMail.check_attachments!(attachments)
+      files = attachments.map(&:first)
 
       recipients.each do |address, name|
-        answer = IntegraMail.post(uri, IntegraMail.payload_for(mail, address, name))
+        answer = IntegraMail.post(uri, IntegraMail.payload_for(mail, address, name, files))
+        delivered = Array(answer['attachments']).map { |a| "#{a['name']} (#{a['bytes']} bytes)" if a.is_a?(Hash) }
         Rails.logger.info(
           "[integra_mail] sent messageId=#{answer['messageId']} internetMessageId=#{answer['internetMessageId']} " \
-          "replyTo=#{answer['replyTo']}"
+          "replyTo=#{answer['replyTo']} attachments=[#{delivered.compact.join(', ')}]"
         )
       end
 
       mail
+    end
+  end
+
+  # Prepended to SubmitterMailer (below): where upstream would stop attaching and send the rest as complete, raise.
+  # Upstream's rule, mirrored exactly: it breaks off once the running total reaches MAX_ATTACHMENTS_SIZE, which
+  # happens if and only if everything it was given reaches it.
+  module NoSilentTrim
+    private
+
+    def add_attachments_with_size_limit(submitter, storage_attachments, current_size, filename_format = nil)
+      total = current_size + storage_attachments.to_a.sum(&:byte_size)
+      if total >= SubmitterMailer::MAX_ATTACHMENTS_SIZE
+        raise AttachmentsRefused,
+              IntegraMail.refused('attachments_total_too_large',
+                                  "the completed copy's files total #{total} bytes; DocuSeal would have sent only " \
+                                  "those under #{SubmitterMailer::MAX_ATTACHMENTS_SIZE} bytes and dropped the rest")
+      end
+
+      super
     end
   end
 end
@@ -226,6 +303,12 @@ if IntegraMail.active?
   ActiveSupport.on_load(:action_mailer) do
     self.delivery_method = :integra_mail
     self.raise_delivery_errors = true
+  end
+
+  # DocuSeal's silent attachment trim becomes a loud failure (see NoSilentTrim). to_prepare: SubmitterMailer is
+  # autoloaded, and in development it is reloaded, so the prepend is made each time it is (re)defined.
+  Rails.application.config.to_prepare do
+    SubmitterMailer.prepend(IntegraMail::NoSilentTrim) unless SubmitterMailer <= IntegraMail::NoSilentTrim
   end
 
   Rails.application.config.after_initialize do

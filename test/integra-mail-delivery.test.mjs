@@ -75,12 +75,15 @@ test('it sends the token as the bearer, and nowhere else', () => {
   }
 })
 
-test('what leaves is exactly { to, toName?, subject, text } — the plain text, never HTML', () => {
+test('what leaves is { to, toName?, subject, text, attachments? } — plain text, never HTML', () => {
   const payload = methodBody('payload_for')
   assert.match(payload, /payload = \{ to: address, subject: single_line\(utf8\(mail\.subject\), MAX_SUBJECT\), text: text_of\(mail\) \}/)
   assert.match(payload, /payload\[:toName\] = display if display\.present\?/)
+  // Attachments are the signed document and the audit log (plan section 15, issue #578). The key is added only when there
+  // ARE files, so a message with none leaves exactly as it did before - and a reader of this test can see both halves.
+  assert.match(payload, /payload\[:attachments\] = files if files\.any\?/)
   const keys = new Set([...payload.matchAll(/\b(\w+):\s/g)].map((m) => m[1]).concat([...payload.matchAll(/payload\[:(\w+)\]/g)].map((m) => m[1])))
-  assert.deepEqual([...keys].sort(), ['subject', 'text', 'to', 'toName'])
+  assert.deepEqual([...keys].sort(), ['attachments', 'subject', 'text', 'to', 'toName'])
   assert.match(methodBody('text_of'), /mail\.text_part\.decoded/, 'the text part DocuSeal composed')
   assert.ok(!/html:/.test(code), 'no html key anywhere')
 })
