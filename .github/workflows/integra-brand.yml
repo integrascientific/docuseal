@@ -1,0 +1,16 @@
+# Integra Sign brand-token guard (INTEGRA-BRANDING.md §3). A separate file from upstream's ci.yml so a
+# rebase onto a new DocuSeal tag never conflicts here. No install step: the test reads files as text.
+name: Integra brand tokens
+on: [push]
+
+jobs:
+  brand-tokens:
+    name: Brand tokens
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --test test/integra-brand-tokens.test.mjs

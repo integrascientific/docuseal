@@ -70,18 +70,36 @@ Source of truth: the `integra-brand` skill (`~/.dsh/skills/integra-brand/SKILL.m
 | `neutral` (main buttons) | `#4B3F72` | Plum |
 | `base-content` (text) | `#131B2C` | Ink |
 | `base-100` (page) | `#F7F4EF` | Paper |
-| `base-200` | `#EFEBE3` | derived: Paper/Hairline midpoint |
+| `base-200` | `#EFEBE3` | derived, not a brand colour: midpoint of Paper and Hairline (rounded up) |
 | `base-300` | `#E6E1D6` | Hairline |
 | `primary` (light buttons) | `#D9D3E8` | Lilac |
 | `secondary` | `#D4B26C` | Gold light |
 | `accent` | `#C5A059` | Gold |
+
+The three canonical colours daisyUI has no slot for are Tailwind colours in the same file
+(`theme.extend.colors.integra`), so a view can use them as utilities:
+
+| Tailwind colour | Utility example | Value | Brand token |
+|---|---|---|---|
+| `integra-plum-dark` | `bg-integra-plum-dark` | `#34285A` | Plum dark |
+| `integra-grey` | `text-integra-grey` | `#5F5A66` | Grey |
+| `integra-cream` | `bg-integra-cream` | `#FBF6EE` | Cream |
+
+**Guard:** `test/integra-brand-tokens.test.mjs` (`node --test test/integra-brand-tokens.test.mjs`, no
+dependencies; run on every push by `.github/workflows/integra-brand.yml`). It asserts that all ten
+canonical colours are in `tailwind.config.js`, that no other colour is except the documented
+midpoint (recomputed from Paper and Hairline), that `tailwind.dynamic.config.js` repeats only
+colours the main theme holds, and the font families and weights below. The Integra portal carries
+the same guard over its own stylesheet, so the two products cannot drift apart unnoticed.
 
 Also: `tailwind.dynamic.config.js`, `theme-color` meta, PWA manifest, static error pages
 (`app/views/errors/*.html`), the QR sheet (`#4B3F72` / hover `#34285A`). The theme key is still
 `docuseal` (`data-theme="docuseal"`): it is an internal id, not shown to anyone.
 
 - **Typography:** Manrope for `h1`–`h3`, Inter for body, self-hosted variable `latin` subsets in
-  `public/fonts/` (SIL OFL 1.1, licence texts alongside). Declared in
+  `public/fonts/` (SIL OFL 1.1, licence texts alongside). Weights are explicit: body 400, `b`/`strong`
+  600, and a heading scale `h1` 800 / `h2` 700 / `h3` 600, plus `.integra-heading` 700. A `font-*`
+  utility a view sets on a heading still wins (the partial explains the specificity). Declared in
   `app/views/layouts/_integra_brand.html.erb` (rendered from `layouts/_head_tags`). No third-party
   font request. Other scripts fall back to system fonts.
 - **Logo:** the Integra Scientific mark from `logo_icononly_trimmed.svg`, paths and colours unchanged
