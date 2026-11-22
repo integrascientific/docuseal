@@ -14,3 +14,6 @@ jobs:
         with:
           node-version: 22
       - run: node --test test/integra-brand-tokens.test.mjs
+      # The mail delivery method (INTEGRA-BRANDING.md §7): posts to INTEGRA_MAIL_URL with the token, raises
+      # rather than drops when unconfigured. Also read as text, so it needs no Ruby.
+      - run: node --test test/integra-mail-delivery.test.mjs

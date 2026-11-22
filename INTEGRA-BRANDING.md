@@ -10,7 +10,7 @@ byte-identical to upstream and must stay that way.
 | Upstream version pinned | tag **`3.3.8`** (`a628dd3`) |
 | Fork | https://github.com/integrascientific/docuseal |
 | Branding branch | `integra-branding` (branched from `3.3.8`) |
-| Scope | presentation only, plus one new route (`GET /source`). No gem, schema, API or signing-logic change. |
+| Scope | presentation only, plus one new route (`GET /source`) and one mail delivery method (§7). No gem, schema, API or signing-logic change. |
 
 ## 1. The attribution line (licence obligation — do not remove)
 
@@ -188,6 +188,31 @@ grep -rIn "docuseal\.com\|docusealco" app/views app/javascript --include='*.erb'
 grep -rn "attribution_line" app/views                                    # the line is still rendered everywhere listed in §1
 bundle exec rspec spec/requests/source_spec.rb spec/system/signing_form_spec.rb spec/system/newsletters_spec.rb spec/system/setup_spec.rb
 ```
+
+## 7. Mail delivery (`config/initializers/integra_mail.rb`)
+
+DocuSeal composes its e-mails and, in Integra's deployment, had no transport: every signature request,
+reminder and completed copy went nowhere. One initializer adds an ActionMailer delivery method,
+`:integra_mail`, that posts each message's **plain text** (plus subject and recipient) to the Integra
+CRM's `sign-mail` route over HTTPS with a bearer token. The CRM renders it in the Integra e-mail frame and
+sends it through Microsoft 365 as `info@integrascientific.com`. Replies go to that mailbox.
+
+- **Unchanged:** every mailer, mailer view, variable, trigger and condition. The delivery method is the
+  only seam. `Accounts.can_send_emails?` is untouched too, so DocuSeal's own UI still offers "send by
+  e-mail" only where upstream does without SMTP. The portal's API path (`send_email: true`) is not gated
+  by it.
+- **Environment:** `INTEGRA_MAIL_URL`, `INTEGRA_MAIL_TOKEN` (and `SMTP_FROM`, which DocuSeal's own
+  `ActionMailerConfigsInterceptor` reads once a delivery method is configured).
+- **On** in production, and wherever `INTEGRA_MAIL_URL` is set. Development keeps `letter_opener_web`
+  and test keeps `:test`.
+- **Unconfigured, it fails loudly, never silently:** an ERROR at boot naming the missing variables, and
+  `IntegraMail::NotConfigured` at send. `raise_delivery_errors` is forced on, so the job fails and retries.
+- **Not carried:** attachments (a WARN names them), and DocuSeal's From/Reply-To.
+- Guard: `test/integra-mail-delivery.test.mjs` (reads the file; no Ruby needed).
+
+After a rebase, check that `lib/action_mailer_configs_interceptor.rb` still keeps a message's delivery method
+when `Rails.application.config.action_mailer.delivery_method` is set. If upstream changes that branch, mail
+can fall back to `:test` and be lost.
 
 ## Removed: the "Company Logo" section on Personalization
 
