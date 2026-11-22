@@ -153,3 +153,13 @@ grep -rIn "docuseal\.com\|docusealco" app/views app/javascript --include='*.erb'
 grep -rn "attribution_line" app/views                                    # the line is still rendered everywhere listed in §1
 bundle exec rspec spec/requests/source_spec.rb spec/system/signing_form_spec.rb spec/system/newsletters_spec.rb spec/system/setup_spec.rb
 ```
+
+## Removed: the "Company Logo" section on Personalization
+
+`/settings/personalization` had a **"Company Logo"** heading followed by `logo_form`, whose contents had already been
+emptied when the Pro upsell was removed. The result was a heading with nothing under it.
+
+It is deleted, together with `_logo_form.html.erb` and `_logo_placeholder.html.erb`, because this deployment is Integra
+Scientific's only: the logo is Integra's mark, baked into the fork as the wordmark partial, and a per-account custom logo is
+a Pro feature this edition does not have and does not sell. Removing the heading is the honest fix — leaving it would imply
+a control exists.
