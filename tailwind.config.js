@@ -10,8 +10,18 @@ module.exports = {
         integra: {
           'plum-dark': '#34285A', // Plum dark — deep backgrounds
           grey: '#5F5A66', // Grey — secondary / muted text
-          cream: '#FBF6EE' // Cream — card and band backgrounds
+          cream: '#FBF6EE', // Cream — card and band backgrounds
+          // The wordmark lockup on a light surface only (shared/_wordmark): INTEGRA navy, SCIENTIFIC
+          // teal, the canonical wordmark colours. Not interface colours; on plum both words are white.
+          'wordmark-navy': '#023C5D',
+          'wordmark-teal': '#008F7A'
         }
+      },
+      fontFamily: {
+        // The wordmark lockup's faces, as on the company website (font-montserrat / font-inter there
+        // too). Both are self-hosted and declared in app/views/layouts/_integra_brand.html.erb.
+        montserrat: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
       }
     }
   },

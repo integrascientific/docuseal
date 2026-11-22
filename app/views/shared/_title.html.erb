@@ -1,2 +1,6 @@
-<%= render 'shared/logo' %>
-<span class="whitespace-nowrap"><%= Docuseal.product_name %></span>
+<%# Integra Sign: the company lockup as the website sets it (shared/_wordmark), with the product name
+    as a separate small label under it, never as a word of the wordmark. %>
+<span class="flex flex-col items-start gap-1">
+  <%= render 'shared/wordmark', tone: :light, class: 'text-lg md:text-2xl' %>
+  <span class="text-xs font-medium uppercase tracking-[0.14em] text-integra-grey"><%= Docuseal.product_name %></span>
+</span>
