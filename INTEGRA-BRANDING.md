@@ -223,3 +223,20 @@ It is deleted, together with `_logo_form.html.erb` and `_logo_placeholder.html.e
 Scientific's only: the logo is Integra's mark, baked into the fork as the wordmark partial, and a per-account custom logo is
 a Pro feature this edition does not have and does not sell. Removing the heading is the honest fix — leaving it would imply
 a control exists.
+
+## The tab: favicon and title
+
+**Favicon.** DocuSeal's `public/favicon.svg` carried a white rounded tile behind the mark (`<rect ... fill="#FFFFFF"/>`),
+which is why the browser tab showed a white blob. It is now the official artwork, `logo_icononly_trimmed.svg`, verbatim —
+transparent, and in the artwork's own colours `#023C5D / #05A8B6 / #50C2CC`. The PNG set was regenerated from the official
+`logo_no_text.png` with Python/Pillow: 16, 32, 96, 180 and 512 px plus a multi-size `favicon.ico`, all transparent, each
+trimmed to the mark and given a 6% optical margin. The two Apple touch icons are rebuilt on **Paper `#F7F4EF`** instead of
+pure white: iOS composites transparency itself, and a white tile is off-brand on every surface.
+
+**Title.** The tab now follows the website's structure — `Integra Scientific | <surface>` — instead of a bare product name:
+
+- signed out: `Integra Scientific | Integra Sign - Document Signing`
+- signed in: `Integra Scientific | Integra Sign`
+
+The website reads `Integra Scientific | EU Market Access & CE Marking`, so the brand comes first and the surface second.
+Everything that shares that variable — the `<title>`, `og:title`, `twitter:title` — follows automatically.

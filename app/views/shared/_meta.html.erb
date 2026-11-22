@@ -1,7 +1,10 @@
 <% if Docuseal.demo? || (request.path != '/' && !devise_controller?) %>
   <meta name="robots" content="noindex">
 <% end %>
-<% title = content_for(:html_title) || (signed_in? ? Docuseal.product_name : "#{Docuseal.product_name} | Document Signing") %>
+<%# The tab title follows the website's structure: Integra Scientific first, then the surface. The website reads
+    "Integra Scientific | EU Market Access & CE Marking"; this reads "Integra Scientific | Sign", and while signed out the
+    descriptor says what the page is for. A bare product name in the tab taught nobody whose product it was. %>
+<% title = content_for(:html_title) || (signed_in? ? "Integra Scientific | #{Docuseal.product_name}" : "Integra Scientific | #{Docuseal.product_name} - Document Signing") %>
 <% description = content_for(:html_description) || "#{Docuseal.product_name} by Integra Scientific. Review, complete and sign documents securely online." %>
 <meta name="description" content="<%= description %>">
 <meta property="og:title" content="<%= title %>">
