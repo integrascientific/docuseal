@@ -240,3 +240,34 @@ pure white: iOS composites transparency itself, and a white tile is off-brand on
 
 The website reads `Integra Scientific | EU Market Access & CE Marking`, so the brand comes first and the surface second.
 Everything that shares that variable — the `<title>`, `og:title`, `twitter:title` — follows automatically.
+
+## 8. The public surface, enumerated
+
+Plan section 16 puts Keycloak (and later an ALB rule) in front of everything except what a signatory needs, and says that rule
+comes last *"once the signer-path exemptions are enumerated and tested"*. `test/integra-public-surface.test.mjs` is that
+enumeration: it reads every controller for `skip_before_action :authenticate_user!` and requires each one to appear in an
+explicit list **with a reason from a closed set of kinds** — `signer`, `licence`, `health`, `brand`, `delivery`.
+
+Twenty-one controllers answer without a signed-in user, and they fall into exactly those kinds. The guard fails when:
+
+- a **new** unauthenticated controller appears (the message names it and says to add it with a reason or require auth);
+- a listed one **stops** being public (so the list cannot rot);
+- a reason is missing or starts with a kind outside the set;
+- **`submissions_debug_controller`'s route leaves `Rails.env.development?`** — it skips both authentication *and*
+  authorisation, finds a submitter by slug, renders their submission and **generates the audit trail**. It is safe today only
+  because the route is development-gated, and that is now asserted rather than trusted;
+- any of the five surfaces the signing journey depends on stops being public — `start_form`, `submit_form`,
+  `submit_form_draw_signature`, `submit_form_completed_download`, `source` — which would break signing for every client and
+  look like a 500, not a 401;
+- anything whose name looks administrative (`settings`, `admin`, `users`, `api_`) turns up in the list at all.
+
+Two entries deserve a reader's attention rather than a passing glance:
+
+- **`send_submission_email_controller`** answers unauthenticated **and** skips CSRF verification. It sends a completed copy to
+  an address the caller supplies, requiring the slug and the submitter's own address, and it is the reason the "delivery"
+  kind exists. It is a mail relay by design; the guard exists so it cannot multiply.
+- **`setup_controller`** is public and creates the admin account on a fresh instance. That window is exactly why plan section
+  16 puts SSO in front of the engine: on a new stage whose URL is reachable before someone signs in, the first visitor claims
+  the account.
+
+Verified: 5 tests, and a deliberately added unauthenticated `SettingsProbeController` fails the first one by name.

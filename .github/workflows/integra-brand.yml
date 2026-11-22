@@ -1,6 +1,6 @@
 # Integra Sign brand-token guard (INTEGRA-BRANDING.md §3). A separate file from upstream's ci.yml so a
 # rebase onto a new DocuSeal tag never conflicts here. No install step: the test reads files as text.
-name: Integra brand tokens
+name: Integra brand and public-surface guards
 on: [push]
 
 jobs:
@@ -17,3 +17,7 @@ jobs:
       # The mail delivery method (INTEGRA-BRANDING.md §7): posts to INTEGRA_MAIL_URL with the token, raises
       # rather than drops when unconfigured. Also read as text, so it needs no Ruby.
       - run: node --test test/integra-mail-delivery.test.mjs
+      # The PUBLIC SURFACE (INTEGRA-BRANDING.md section 8): every controller that answers without a signed-in user, pinned
+      # with a reason. Plan section 16 puts Keycloak/ALB in front of everything except the signer pages, and says that rule
+      # comes last "once the signer-path exemptions are enumerated and tested". This is that enumeration.
+      - run: node --test test/integra-public-surface.test.mjs
